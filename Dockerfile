@@ -12,7 +12,6 @@ COPY package-lock.json .
 #install all the React.js application dependencies
 RUN npm i
 
-Docker react-app working directory -->
 COPY . .
 
 #Expose the React.js application container on port 3000
