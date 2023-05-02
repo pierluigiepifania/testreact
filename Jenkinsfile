@@ -3,10 +3,10 @@ pipeline {
   environment {
     dockerimagename = "pierluigiep/test"
     dockerImage = ""
+  }
 
     tools {
       'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
-     }
   }
 
   agent any
