@@ -3,6 +3,11 @@ pipeline {
   environment {
     dockerimagename = "pierluigiep/test"
     dockerImage = ""
+
+    tools {
+  	<...>
+      'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
+     }
   }
 
   agent any
@@ -29,8 +34,10 @@ pipeline {
            }
       steps{
         script {
+         docker.withTool('docker'){
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
             dockerImage.push("latest")
+		}
           }
         }
       }
