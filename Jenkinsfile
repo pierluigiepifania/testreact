@@ -39,8 +39,9 @@ pipeline {
 
     stage('Deploying React.js container to Kubernetes') {
 	steps {
-        sh "kubectl apply -f deployment.yaml --context minikube"
-	  sh "kubectl apply -f service.yaml --context minikube"
+	  sh "kubectl config get-contexts"
+        sh "kubectl apply -f deployment.yaml"
+	  sh "kubectl apply -f service.yaml"
       }
     }
   }
