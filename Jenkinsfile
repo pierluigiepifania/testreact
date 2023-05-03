@@ -3,13 +3,11 @@ pipeline {
   environment {
     dockerimagename = "pierluigiep/test"
     dockerImage = ""
+    PATH = "/usr/local/bin/:${PATH}"
   }
 
   agent any
 
-   environment {
-        PATH = "/usr/local/bin/:${PATH}"
-    }
 
   stages {
 
