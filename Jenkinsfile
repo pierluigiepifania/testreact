@@ -3,7 +3,6 @@ pipeline {
   environment {
     dockerimagename = "pierluigiep/test"
     dockerImage = ""
-    PATH = "/usr/local/bin/kubectl:${PATH}"
   }
 
   agent any
@@ -40,7 +39,6 @@ pipeline {
 
     stage('Deploying React.js container to Kubernetes') {
 	steps {
-	  sh 'which kubectl'
         sh "kubectl apply -f deployment.yaml"
 	  sh "kubectl apply -f service.yaml"
       }
