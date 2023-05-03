@@ -3,7 +3,7 @@ pipeline {
   environment {
     dockerimagename = "pierluigiep/test"
     dockerImage = ""
-    PATH = "/usr/local/bin/kubectl/:${PATH}"
+    PATH = "/usr/local/bin/kubectl:${PATH}"
   }
 
   agent any
